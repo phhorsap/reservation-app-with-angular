@@ -1,0 +1,36 @@
+<h1 style="align-items: center;">Guest Formular </h1>
+<mat-dialog-content>
+  <form [formGroup]="reservationForm">
+    <mat-form-field class="full-width">
+      <mat-label>Name</mat-label>
+      <input matInput/>
+    </mat-form-field><br>
+
+     <mat-form-field class="full-width">
+      <mat-label>Lastname</mat-label>
+      <input matInput/>
+    </mat-form-field><br>
+
+    <mat-form-field class="full-width">
+      <mat-label>Gender</mat-label>
+      <mat-select required formControlName="gender">
+        <mat-option value="m">Male</mat-option>
+        <mat-option value="f">Female</mat-option>
+        <mat-option value="div">DIV</mat-option>
+     
+      </mat-select>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <div class="button-row" style="text-align: center; width: 100%">
+    <button mat-button type="submit" (click)="submit()" style="margin: 0 8px">
+      <mat-icon>save</mat-icon>
+    </button>
+    <button mat-button type="button" (click)="close()" style="margin: 0 8px">
+      <mat-icon>close</mat-icon>
+    </button>
+  </div>
+</mat-dialog-actions>
+

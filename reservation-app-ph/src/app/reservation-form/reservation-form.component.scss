@@ -1,0 +1,7 @@
+form {
+  padding: 7px 10px 0 10px;
+}
+
+::ng-deep .cdk-overlay-backdrop.cdk-overlay-backdrop-showing {
+  opacity: 0;
+}
