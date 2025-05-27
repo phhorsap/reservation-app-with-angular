@@ -10,7 +10,8 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import { MatOptionModule } from '@angular/material/core';
-import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { ReservationnService } from '../services/reservationn.service';
 
 @Component({
   selector: 'app-reservation-form',
@@ -31,14 +32,22 @@ import { FormBuilder, ReactiveFormsModule, Validators } from '@angular/forms';
 })
 export class ReservationFormComponent {
   formbuilder = inject(FormBuilder);
+  #resSevice = inject(ReservationnService);
+
 
   reservationForm= this.formbuilder.group({
+    id: [, { nonNullable: true }],
       name: [, { nonNullable: true }],
       lastname: [, { nonNullable: true }],
-      gender: [, { nonNullable: true }]
+      gender: [, { nonNullable: true }],
+      checkinDate: [, { nonNullable: true }],
+      checkoutDate: [, { nonNullable: true }],
+      email: [, { nonNullable: true }]
     });
 
-  submit(){}
+  submit(){
+   //this.#resSevice.addReservation(this.reservationForm.value)
+  }
 
   close(){}
 }
